@@ -1,6 +1,6 @@
 <?php
 // Page head + opening body tag. Expects: $config, $page_title, $page_description, $canonical_path, $active_nav
-$page_title = $page_title ?? ($config['site_title'] ?? 'Stephen Williams | PHP & Laravel Developer');
+$page_title = $page_title ?? ($config['site_title'] ?? 'Ani Makuochukwu Stepehn | PHP & Laravel Developer');
 $page_description = $page_description ?? ($config['description'] ?? '');
 $canonical = canonical_url($config, $canonical_path ?? '');
 ?>
@@ -11,7 +11,8 @@ $canonical = canonical_url($config, $canonical_path ?? '');
     <title><?= e($page_title) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="<?= e($page_description) ?>" />
-    <meta name="author" content="Stephen Williams" />
+    <meta name="author" content="Ani Makuochukwu Stepehn" />
+    <meta name="google-site-verification" content="CnqtmTz3cVu8emWAdblURn2Q-gnLYAq-cP5zeW3Zxes" />
     <?php if ($canonical !== ''): ?>
     <link rel="canonical" href="<?= e($canonical) ?>" />
     <?php endif; ?>
