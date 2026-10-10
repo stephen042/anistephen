@@ -23,7 +23,7 @@ $contact_href = $is_home ? '#contact' : 'index.php#contact';
                     <a class="nav-link" href="<?= e($contact_href) ?>">Get in Touch</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="assets/files/Stephen-Williams-CV.pdf" download>Download CV</a>
+                    <a class="nav-link" href="assets/files/Ani_Makuochukwu_Stephen_CV.pdf" download>Download CV</a>
                 </li>
             </ul>
             <a href="<?= e($contact_href) ?>" class="btn btn-sm nav-btn text-primary mb-4 mb-lg-0">Hire Me! <i class="icon-xxs ms-1" data-feather="chevrons-right"></i></a>

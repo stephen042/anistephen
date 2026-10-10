@@ -142,7 +142,7 @@ require __DIR__ . '/includes/navbar.php';
             </div>
         <?php endforeach; ?>
         <div class="text-center mt-4">
-            <a href="assets/files/Stephen-Williams-CV.pdf" class="btn btn-outline-primary" download>Download CV</a>
+            <a href="assets/files/Ani_Makuochukwu_Stephen_CV.pdf" class="btn btn-outline-primary" download>Download CV</a>
         </div>
     </div>
 </section>
