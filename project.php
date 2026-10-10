@@ -55,7 +55,6 @@ require __DIR__ . '/includes/navbar.php';
 
         <!-- 3. Screenshot slider -->
         <?php require __DIR__ . '/includes/slider.php'; ?>
-        <p class="text-muted fs-13 mt-2">Screenshots are placeholders until real product captures are added — add files to <code>images/projects/<?= e($project['slug']) ?>/</code> and list them in <code>data/projects.php</code>.</p>
 
         <!-- 4. Live project -->
         <div class="d-flex gap-2 flex-wrap my-4">
