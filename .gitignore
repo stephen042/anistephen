@@ -1,0 +1,13 @@
+# Composer dependencies (run `composer install` on the server)
+/vendor/
+
+# Local PHP error log (contact endpoint writes here; never commit it)
+*.log
+php_errors.log
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+/config

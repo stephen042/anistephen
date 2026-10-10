@@ -1,0 +1,222 @@
+/* Portfolio additions on top of the Selfown template. Keep minimal. */
+
+/* Prevent accidental horizontal scrolling on small screens */
+html, body { overflow-x: hidden; }
+img { max-width: 100%; }
+
+.brand-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  color: #2a2c3d !important;
+  text-decoration: none;
+}
+.brand-text-light { color: #fff !important; }
+.brand-dot { color: #0d6efd; }
+
+/* Hero: offset accounts for the fixed navbar (~70px tall: 20px padding
+   top/bottom + content), plus normal breathing room — no overlap, no gaps. */
+.hero-one { padding: 132px 0 72px; }
+
+.hero-sub { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.hero-portrait {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.75rem;
+}
+
+/* Floating photo card: white frame + offset backdrop + gentle float.
+   The photo keeps its natural aspect ratio — never cropped, never distorted. */
+.hero-photo-card {
+  position: relative;
+  z-index: 0;
+  max-width: 440px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 0.75rem;
+  box-shadow: 0 24px 60px rgba(23, 45, 81, 0.16);
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+.hero-photo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.16), rgba(0, 188, 212, 0.16));
+  transform: rotate(-3deg) translate(10px, 14px);
+  z-index: -1;
+}
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo-card { animation: none; }
+}
+
+.hero-tech-line {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+.page-hero { min-height: 320px; }
+
+/* Constrain long reading sections for a compact, professional feel */
+.narrow-wrap { max-width: 860px; margin-left: auto; margin-right: auto; }
+
+/* Status badge (Active / In development) */
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: #e7f4ec;
+  color: #1c7a3d;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Skills: clean pill list, PHP/Laravel emphasised */
+.skill-list { gap: 0.6rem; }
+.skill-pill {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  margin: 0.25rem;
+  border-radius: 999px;
+  background: #f1f4f9;
+  color: #3a3d53;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid #e3e8f0;
+}
+.skill-pill.skill-primary {
+  background: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.65rem 1.35rem;
+  font-size: 1.02rem;
+}
+
+.tech-group { margin-bottom: 1.5rem; }
+.tech-group-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2a2c3d;
+  margin-bottom: 0.6rem;
+}
+
+/* Projects */
+.project-card { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.project-card:hover { transform: translateY(-3px); }
+.project-thumb {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #eef1f6;
+}
+.project-thumb-link { display: block; }
+
+/* Screenshot slider: fixed frame so images never push the page around.
+   object-fit: contain => no distortion, works with any screenshot size. */
+.project-slider .carousel-inner { background: #eef1f6; }
+.project-slide-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 520px;
+  object-fit: contain;
+  background: #eef1f6;
+}
+.project-slider .carousel-control-prev-icon,
+.project-slider .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  padding: 1.1rem;
+  background-size: 55% 55%;
+}
+.project-slider .carousel-indicators [data-bs-target] { background-color: #0d6efd; }
+
+.detail-wrap { max-width: 960px; margin-left: auto; margin-right: auto; }
+
+.footer-simple { padding-bottom: 10px; }
+.footer-tagline { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.75);
+  margin-left: 1.25rem;
+  text-decoration: none;
+}
+.footer-nav a:hover { color: #fff; }
+
+/* ---------- Mobile & tablet ---------- */
+@media (max-width: 991px) {
+  .hero-one { padding: 118px 0 56px; }
+
+  /* Mobile hero: stacked PHOTO -> TEXT -> BUTTONS as independent elements.
+     Photo keeps its natural aspect ratio (never cropped); text sits below it. */
+  .hero-media { order: -1; }
+  .hero-photo-card { max-width: 400px; }
+  .hero-text { margin-top: 2rem; }
+  .hero-sub { margin-bottom: 1.25rem; }
+  .footer-nav { text-align: left !important; margin-top: 1rem; }
+  .footer-nav a { margin-left: 0; margin-right: 1.25rem; }
+
+  .section { padding-top: 3rem; padding-bottom: 3rem; }
+  .page-hero { min-height: 240px; }
+  .contact-side { margin-top: 2rem; }
+  .contact-side img { height: 140px !important; }
+}
+
+/* ---------- Contact form (AJAX) ---------- */
+/* Honeypot: off-screen, not display:none, so bots fill it but humans never see it. */
+.contact-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+}
+#contact-feedback { margin-bottom: 1rem; }
+#contact-feedback.d-none { display: none !important; margin-bottom: 0; }
+#contact-submit-btn[disabled] { opacity: 0.65; cursor: wait; }
+
+/* ---------- WhatsApp widget (GetButton, bottom-left) ---------- */
+/* Keep the floating bubble above content but below navbars/modals, and
+   clear of the contact card on small screens. */
+div[id^="getbutton"],
+div[class*="getbutton"] { z-index: 1030 !important; }
+
+@media (max-width: 575px) {
+  /* Give the contact card breathing room so the bubble never covers
+     the Send Message button on 320px–430px screens. */
+  #contact .card-body { padding-bottom: 3.5rem; }
+  .hero-one { padding: 108px 0 44px; }
+  .hero-photo-card { max-width: 320px; padding: 0.6rem; }
+  .hero-text { margin-top: 1.5rem; }
+  .hero-one .hero-title { font-size: 1.9rem; line-height: 1.25; }
+  .hero-one .fs-18 { font-size: 1rem !important; }
+  .hero-tech-line { font-size: 0.78rem; }
+
+  /* Buttons fit the screen */
+  .hero-buttons .btn { flex: 1 1 auto; min-width: 200px; }
+  .project-detail .btn { width: 100%; }
+  .project-card .btn { flex: 1 1 auto; }
+
+  /* Compact but comfortable spacing */
+  .section { padding-top: 2.25rem; padding-bottom: 2.25rem; }
+  .fs-2 { font-size: 1.5rem !important; }
+  .project-thumb { height: 190px; }
+  .project-slide-img { aspect-ratio: 16 / 11; max-height: 320px; }
+
+  /* Smaller carousel controls on phones */
+  .project-slider .carousel-control-prev-icon,
+  .project-slider .carousel-control-next-icon { padding: 0.85rem; }
+  .skill-pill { font-size: 0.85rem; padding: 0.45rem 0.9rem; }
+  .skill-pill.skill-primary { font-size: 0.9rem; padding: 0.5rem 1rem; }
+}
